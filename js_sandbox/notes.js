@@ -238,7 +238,7 @@ val = birthday
 
 console.log(val)
 
-I    F - - - - - 
+// I F - - - - - 
 let id = 300
 
 if(id == 101){
@@ -287,13 +287,14 @@ else{
     console.log(`${name} can run in the race`)
 }
 
-//TERNARY
+//T E R N A R Y 
 
 let id = 200
 
 console.log(id === 100 ? 'CORRECT' : 'INCORRECT')
 
-//SWITCH CASE
+
+//S W I T C H   C A S E 
 
 
 let color = 'yellow'
@@ -366,7 +367,7 @@ switch(color){
         break;
 }
 
-// FUNCTIONS
+// F U N C T I O N S
 function name (fn = 'Mic', ln = 'reddy') {
     return 'Hello ' + fn + ' ' + ln
 }
@@ -406,3 +407,40 @@ todoo.delete = function(){
 todoo.add()
 todoo.edit('Mickey')
 todoo.delete("")
+
+
+//F  O  R     L  O  O  P
+for(i = 0; i< 10; i++){
+    if(i === 2){
+        console.log("2 is first number")
+        continue
+    }
+
+    if(i ===5 ){
+        break
+    }
+
+    console.log("number " + i)
+}
+
+
+//W  H  I  L  E
+let i = 0
+
+while(i<10){
+    console.log("number" + i)
+    i++
+}
+
+
+//D  O    W  H  I  L  E 
+let i = 2
+
+do {
+    console.log("number" + i)
+    i++
+}
+
+while(i<10){
+    console.log("print")
+}
