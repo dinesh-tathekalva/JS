@@ -1,6 +1,10 @@
-let i = 0
+var a = 2
 
-while(i<10){
-    console.log("number" + i)
-    i++
+function test(){
+    var a = 5
+    console.log(a)
 }
+
+test()
+
+console.log(a)

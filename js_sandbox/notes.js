@@ -444,3 +444,78 @@ do {
 while(i<10){
     console.log("print")
 }
+
+//f o r   E a c h 
+cars = ['Tesla', 'Ford', 'Chevy', 'GMC']
+
+cars.forEach(car => {
+    console.log(car)
+})
+
+
+//M  A  P
+const users = [
+    {id: 1, name: 'Christoph'},
+    {id: 2, name: 'Waltz'},
+    {id: 3, name: 'Disney'},
+    {id: 4, name: 'Netflix'},
+    {id: 5, name: 'Hulu'}
+]
+const ids = users.map((user) => {
+    // console.log(`${user.id} : ${user.name}`)
+    return user.id
+})
+
+console.log(ids)
+
+//F O R     I N 
+const user = {
+    fn: 'Christoph',
+    ln: 'Waltz',
+    age: 28
+}
+
+for(let x in user){
+    // console.log(x)
+    console.log(`${x} : ${user[x]}`)
+}
+// confirm
+if(confirm('Are you sure')){
+    console.log('yes')
+}
+else{
+    console.log('no')
+}
+
+//Window.
+
+let val 
+
+val = window.outerHeight
+val = window.outerWidth
+val = window.innerHeight
+val = window.location
+val = window.location.hostname
+val = window.location.port
+console.log(val)
+
+// window.location.href  = 'http://google.com''
+
+// window.location.reload()
+
+// window.history.go()
+
+// scope
+
+var a = 2
+
+function test(){
+    var a = 5
+    console.log(a)
+}
+
+test()
+
+console.log(a)
+
+// we can manipulate/edit DOM with the Selectors like getElementById etc 
