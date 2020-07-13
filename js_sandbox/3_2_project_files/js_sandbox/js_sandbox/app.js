@@ -1,19 +1,20 @@
-// Create Element
-const li = document.createElement('li')
+//Create element
 
-// create classname
-li.className = "collection-item"
+const newHeading = document.createElement('h2')
 
-// create id 
-li.id = 'testId'
+newHeading.id = ('task-title')
 
-// add attribute
-li.setAttribute('title', 'New Item')
+// adding text 
 
-// create text node append 
-li.appendChild(document.createTextNode('Mohana'))
+newHeading.appendChild(document.createTextNode('Tasks'))
 
-//append li as child to ul
-var liv=document.querySelector('ul.collection').appendChild(li)
+//Select Old node
+const oldHeading = document.querySelector('#task-title')
 
-console.log(liv)
+const parentNode = document.querySelector('.card-action')
+
+parentNode.replaceChild(newHeading, oldHeading)
+
+
+console.log()
+
