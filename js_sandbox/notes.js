@@ -444,3 +444,193 @@ do {
 while(i<10){
     console.log("print")
 }
+
+//f o r   E a c h 
+cars = ['Tesla', 'Ford', 'Chevy', 'GMC']
+
+cars.forEach(car => {
+    console.log(car)
+})
+
+
+//M  A  P
+const users = [
+    {id: 1, name: 'Christoph'},
+    {id: 2, name: 'Waltz'},
+    {id: 3, name: 'Disney'},
+    {id: 4, name: 'Netflix'},
+    {id: 5, name: 'Hulu'}
+]
+const ids = users.map((user) => {
+    // console.log(`${user.id} : ${user.name}`)
+    return user.id
+})
+
+console.log(ids)
+
+//F O R     I N 
+const user = {
+    fn: 'Christoph',
+    ln: 'Waltz',
+    age: 28
+}
+
+for(let x in user){
+    // console.log(x)
+    console.log(`${x} : ${user[x]}`)
+}
+// confirm
+if(confirm('Are you sure')){
+    console.log('yes')
+}
+else{
+    console.log('no')
+}
+
+//Window.
+
+let val 
+
+val = window.outerHeight
+val = window.outerWidth
+val = window.innerHeight
+val = window.location
+val = window.location.hostname
+val = window.location.port
+console.log(val)
+
+// window.location.href  = 'http://google.com''
+
+// window.location.reload()
+
+// window.history.go()
+
+// scope
+
+var a = 2
+
+function test(){
+    var a = 5
+    console.log(a)
+}
+
+test()
+
+console.log(a)
+
+// we can manipulate/edit DOM with the Selectors like getElementById etc 
+
+// D O M
+
+let val;
+
+val = document;
+val = document.all;
+val = document.all[2];
+val = document.all.length;
+val = document.head;
+val = document.body;
+val = document.doctype;
+val = document.domain;
+val = document.URL;
+val = document.characterSet;
+val = document.contentType;
+
+val = document.forms;
+val = document.forms[0];
+val = document.forms[0].id;
+val = document.forms[0].method;
+val = document.forms[0].action;
+
+val = document.links;
+val = document.links[0];
+val = document.links[0].id;
+val = document.links[0].className;
+val = document.links[0].classList[0];
+
+val = document.images;
+
+val = document.scripts;
+val = document.scripts[2].getAttribute('src');
+
+let scripts = document.scripts;
+
+let scriptsArr = Array.from(scripts);
+
+scriptsArr.forEach(function(script) {
+  console.log(script.getAttribute('src'));
+});
+
+console.log(val);
+
+
+// Manipulation and Traversing DOM 
+
+
+// console.log(document.getElementById("task-title"))
+
+// console.log(document.getElementById("task-title").id)
+// console.log(document.getElementById("task-title").className)
+
+// //Changing Style
+// document.getElementById('task-title').style.background = 'black'
+// document.getElementById('task-title').style.background = '#FFF'
+// document.getElementById('task-title').style.padding = '5px'
+
+// // Change Content
+// document.getElementById('task-title').textContent = 'Task List'
+// document.getElementById('task-title').innerText= 'My Tasks'
+// document.getElementById('task-title').innerHTML= '<span style= "color: red">Task List</span>'
+
+//Query Selector
+
+// console.log(document.querySelector('#task-title'))
+// console.log(document.querySelector('.card-title'))
+// console.log(document.querySelector('h5'))
+
+// document.querySelector('li').style.color = 'red'
+
+
+
+
+// const items= document.querySelectorAll('ul.collection li.collection-item')
+
+// items.forEach((item, index)  => {
+//   item.textContent = `Hello`
+// })
+
+// const listItemsOdd = document.querySelectorAll('li:nth-child(odd)')
+// const listItemsEven = document.querySelectorAll('li:nth-child(even)')
+
+// listItemsOdd.forEach(odd =>{
+//   odd.style.background = '#ccc'
+// })
+
+// for(let i=0; i< listItemsEven.length; i++){
+//   listItemsEven[i].style.background = "#f2f2f2"
+// }
+
+const list = document.querySelector('ul.collection')
+const listItem = document.querySelector('li.collection-item:first-child')
+
+// val = list.childNodes
+// val = list.children
+// val = list.children[1].textContent = "Change"
+
+// val = list.children
+// val = list.children[3].children
+// val = list.firstChild
+
+// val = list.firstChild
+
+// val = list.lastChild
+// val = list.lastElementChild
+
+// val = list.childElementCount
+
+val = listItem.parentNode
+val = listItem.parentElement.parentElement
+console.log(val)
+
+// console.log(listItem)
+
