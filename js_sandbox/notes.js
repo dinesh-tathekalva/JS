@@ -634,3 +634,32 @@ console.log(val)
 
 // console.log(listItem)
 
+// Create Element
+const li = document.createElement('li')
+
+// create classname
+li.className = "collection-item"
+
+// create id 
+li.id = 'testId'
+
+// add attribute
+li.setAttribute('title', 'New Item')
+
+// create text node append 
+li.appendChild(document.createTextNode('Mohana'))
+
+//append li as child to ul
+document.querySelector('ul.collection').appendChild(li)
+
+const link = document.createElement('a')
+
+link.className='delete-item secondary-content'
+
+link.appendChild(document.createElement('i'))
+
+link.innerHTML = '<i class="fa fa-remove"></i>'
+
+li.appendChild(link)
+
+console.log(link)
