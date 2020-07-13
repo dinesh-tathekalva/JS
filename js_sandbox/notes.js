@@ -564,3 +564,73 @@ scriptsArr.forEach(function(script) {
 console.log(val);
 
 
+// Manipulation and Traversing DOM 
+
+
+// console.log(document.getElementById("task-title"))
+
+// console.log(document.getElementById("task-title").id)
+// console.log(document.getElementById("task-title").className)
+
+// //Changing Style
+// document.getElementById('task-title').style.background = 'black'
+// document.getElementById('task-title').style.background = '#FFF'
+// document.getElementById('task-title').style.padding = '5px'
+
+// // Change Content
+// document.getElementById('task-title').textContent = 'Task List'
+// document.getElementById('task-title').innerText= 'My Tasks'
+// document.getElementById('task-title').innerHTML= '<span style= "color: red">Task List</span>'
+
+//Query Selector
+
+// console.log(document.querySelector('#task-title'))
+// console.log(document.querySelector('.card-title'))
+// console.log(document.querySelector('h5'))
+
+// document.querySelector('li').style.color = 'red'
+
+
+
+
+// const items= document.querySelectorAll('ul.collection li.collection-item')
+
+// items.forEach((item, index)  => {
+//   item.textContent = `Hello`
+// })
+
+// const listItemsOdd = document.querySelectorAll('li:nth-child(odd)')
+// const listItemsEven = document.querySelectorAll('li:nth-child(even)')
+
+// listItemsOdd.forEach(odd =>{
+//   odd.style.background = '#ccc'
+// })
+
+// for(let i=0; i< listItemsEven.length; i++){
+//   listItemsEven[i].style.background = "#f2f2f2"
+// }
+
+const list = document.querySelector('ul.collection')
+const listItem = document.querySelector('li.collection-item:first-child')
+
+// val = list.childNodes
+// val = list.children
+// val = list.children[1].textContent = "Change"
+
+// val = list.children
+// val = list.children[3].children
+// val = list.firstChild
+
+// val = list.firstChild
+
+// val = list.lastChild
+// val = list.lastElementChild
+
+// val = list.childElementCount
+
+val = listItem.parentNode
+val = listItem.parentElement.parentElement
+console.log(val)
+
+// console.log(listItem)
+
