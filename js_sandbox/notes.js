@@ -663,3 +663,39 @@ link.innerHTML = '<i class="fa fa-remove"></i>'
 li.appendChild(link)
 
 console.log(link)
+
+//Create element
+
+const newHeading = document.createElement('h2')
+
+newHeading.id = ('task-title')
+
+// adding text 
+
+newHeading.appendChild(document.createTextNode('Tasks'))
+
+//Select Old node
+const oldHeading = document.querySelector('#task-title')
+
+const parentNode = document.querySelector('.card-action')
+
+parentNode.replaceChild(newHeading, oldHeading)
+
+// 
+
+const firstLi = document.querySelector('li:first-child')
+const link = firstLi.children[0]
+
+val = link.className
+val = link.classList
+val = link.classList[0]
+console.log(link)
+
+
+
+
+
+
+
+console.log(val)
+
