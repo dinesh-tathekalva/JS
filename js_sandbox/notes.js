@@ -698,4 +698,7 @@ console.log(link)
 
 
 console.log(val)
-
+// TYPES OF EVENTS
+click 
+mouseover 
+timeStamp
