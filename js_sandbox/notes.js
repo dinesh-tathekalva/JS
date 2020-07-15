@@ -194,7 +194,6 @@ val = numbers.sort((x,y) => x-y)
 console.log(val)
 
 
-
 // O     B     J     E     C     T      S--- - - - - - - - - - - - - 
 
 
@@ -691,14 +690,75 @@ val = link.classList
 val = link.classList[0]
 console.log(link)
 
-
-
-
-
-
-
 console.log(val)
 // TYPES OF EVENTS
 click 
 mouseover 
 timeStamp
+mousedown
+mouseup
+mouseenter
+mouseleave
+mouseover
+mouseout
+
+//EVENT LISTENERS
+document.querySelector('.clear-tasks').addEventListener('click', onClick)
+// document.querySelector('.clear-tasks').addEventListener('mouseover', onClick)
+
+function onClick(e){
+// console.log("Clicked")
+
+let val 
+val = e
+val = e.target
+val = e.target.className
+val = e.target.classList
+
+val = e.target.innerText = ' Test'
+
+val = e.type
+
+val = e.timeStamp
+
+val = e.clientY
+val = e.clientX
+
+val = e.offsetX
+val = e.offsetY
+
+console.log(val)
+}
+
+
+const clearBtn = document.querySelector('.clear-tasks')
+const card = document.querySelector('.card')
+const heading = document.querySelector('h5')
+
+const runEvent = e =>{
+    console.log(`Event Type: ${e.type}`)
+
+    heading.textContent =`X-Axis: ${e.offsetX}, Y-Axis: ${e.offsetY}`
+    document.body.style.background = `rgb(${e.offsetX}, ${e.offsetY}, 40)`
+}
+
+// clearBtn.addEventListener('mousedown', runEvent)
+// clearBtn.addEventListener('mouseup', runEvent)
+card.addEventListener('mouseenter', runEvent)
+card.addEventListener('mouseleave', runEvent)
+card.addEventListener('mouseover', runEvent)
+card.addEventListener('mouseout', runEvent)
+card.addEventListener('mousemove', runEvent)
+
+const form = document.querySelector('form')
+const input = document.querySelector('#task')
+
+form.addEventListener('submit', runEvent)
+
+function runEvent(e){
+    console.log(`EVENT TYPE: ${e.type}`)
+    console.log(input.value )
+
+    e.preventDefault()
+
+}
