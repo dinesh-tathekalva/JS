@@ -1,31 +1,43 @@
-const form = document.querySelector('form')
-const input = document.querySelector('#task')
-const heading = document.querySelector('h5')
-const select = document.querySelector('select')
+const deleteItem = document.querySelector('body')
 
-input.value = ''
+deleteItem.addEventListener('click', runEvent)
 
-// input.addEventListener('keydown', runEvent)
-// input.addEventListener('keyup', runEvent)
-// input.addEventListener('keypress', runEvent)
-// input.addEventListener('focus', runEvent)
-// input.addEventListener('blur', runEvent)
-// input.addEventListener('cut', runEvent)
-// input.addEventListener('copy', runEvent)
-// input.addEventListener('paste', runEvent)
-// input.addEventListener('input', runEvent)
-select.addEventListener('change', runEvent)
+function runEvent(e){
+    // console.log('clicked')
 
-
-
-
-function runEvent(e) {
-
-    console.log(`E Type: ${e.type}`)
-    console.log(e.target.value)
-    // heading.innerText = e.target.value
-    // // e.preventDefault()
+    if(e.target.parentElement.classList.contains('delete-item')){
+        console.log('Clicked on X')
+        e.target.parentElement.parentElement.remove()
+        
+    }
 }
 
+document.querySelector('form').addEventListener('submit', function(e){
+
+    const task = document.querySelector('#task').value
+
+    let tasks
+
+    if(localStorage.getItem('tasks') === null) {
+        tasks = []
+        debugger
+    }
+    else{
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+        debugger
+    }
+    
+    tasks.push(task)
 
 
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+    // alert('Task added')
+
+    e.preventDefault()
+})
+
+const tasks = JSON.parse(localStorage.getItem('tasks'))
+
+tasks.forEach(element => {
+    console.log(element)
+});

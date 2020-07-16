@@ -762,3 +762,114 @@ function runEvent(e){
     e.preventDefault()
 
 }
+
+
+const form = document.querySelector('form')
+const input = document.querySelector('#task')
+const heading = document.querySelector('h5')
+const select = document.querySelector('select')
+
+input.value = ''
+
+// input.addEventListener('keydown', runEvent)
+// input.addEventListener('keyup', runEvent)
+// input.addEventListener('keypress', runEvent)
+// input.addEventListener('focus', runEvent)
+// input.addEventListener('blur', runEvent)
+// input.addEventListener('cut', runEvent)
+// input.addEventListener('copy', runEvent)
+// input.addEventListener('paste', runEvent)
+// input.addEventListener('input', runEvent)
+select.addEventListener('change', runEvent)
+
+
+
+
+function runEvent(e) {
+
+    console.log(`E Type: ${e.type}`)
+    console.log(e.target.value)
+    // heading.innerText = e.target.value
+    // // e.preventDefault()
+}
+
+
+
+
+//EVENT BUBBLING
+
+document.querySelector('.container').addEventListener('click', runEvents)
+
+document.querySelector('.card-title').addEventListener('click', runEvent)
+
+function runEvent() {
+    console.log('clicked')
+}
+function runEvents() {
+    console.log('parent clicked')
+}
+
+
+
+//EVENT DELEGATION
+
+// const deleteItem = document.querySelector('.delete-item')
+
+// deleteItem.addEventListener('click', runEvent)
+
+const deleteItem = document.querySelector('body')
+
+deleteItem.addEventListener('click', runEvent)
+
+function runEvent(e){
+    // console.log('clicked')
+
+    if(e.target.parentElement.classList.contains('delete-item')){
+        console.log('Clicked on X')
+        e.target.parentElement.parentElement.remove()
+        
+    }
+}
+
+
+// const name = localStorage.setItem('name', 'Christoph')
+// const age = localStorage.setItem('age', '30')
+
+// document.querySelector('#task').value = ''
+// const ssname = sessionStorage.setItem('name', 'Waltz')
+// const ssage = sessionStorage.setItem('age', '35')
+
+// localStorage.removeItem('age')
+
+// const getName = localStorage.getItem('name')
+// console.log(getName)
+
+
+// CLEARING LOCAL STORAGE
+// localStorage.clear()
+
+
+document.querySelector('form').addEventListener('submit', function(e){
+
+    const task = document.querySelector('#task').value
+
+    let tasks
+
+    if(localStorage.getItem('tasks') === null) {
+        tasks = []
+        debugger
+    }
+    else{
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+        debugger
+    }
+    
+    tasks.push(task)
+
+
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+    // alert('Task added')
+
+    e.preventDefault()
+})
+
