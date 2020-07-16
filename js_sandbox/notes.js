@@ -831,3 +831,45 @@ function runEvent(e){
     }
 }
 
+
+// const name = localStorage.setItem('name', 'Christoph')
+// const age = localStorage.setItem('age', '30')
+
+// document.querySelector('#task').value = ''
+// const ssname = sessionStorage.setItem('name', 'Waltz')
+// const ssage = sessionStorage.setItem('age', '35')
+
+// localStorage.removeItem('age')
+
+// const getName = localStorage.getItem('name')
+// console.log(getName)
+
+
+// CLEARING LOCAL STORAGE
+// localStorage.clear()
+
+
+document.querySelector('form').addEventListener('submit', function(e){
+
+    const task = document.querySelector('#task').value
+
+    let tasks
+
+    if(localStorage.getItem('tasks') === null) {
+        tasks = []
+        debugger
+    }
+    else{
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+        debugger
+    }
+    
+    tasks.push(task)
+
+
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+    // alert('Task added')
+
+    e.preventDefault()
+})
+

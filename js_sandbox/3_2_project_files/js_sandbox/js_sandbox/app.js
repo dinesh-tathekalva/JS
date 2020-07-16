@@ -1,10 +1,3 @@
-
-//EVENT DELEGATION
-
-// const deleteItem = document.querySelector('.delete-item')
-
-// deleteItem.addEventListener('click', runEvent)
-
 const deleteItem = document.querySelector('body')
 
 deleteItem.addEventListener('click', runEvent)
@@ -19,3 +12,32 @@ function runEvent(e){
     }
 }
 
+document.querySelector('form').addEventListener('submit', function(e){
+
+    const task = document.querySelector('#task').value
+
+    let tasks
+
+    if(localStorage.getItem('tasks') === null) {
+        tasks = []
+        debugger
+    }
+    else{
+        tasks = JSON.parse(localStorage.getItem('tasks'))
+        debugger
+    }
+    
+    tasks.push(task)
+
+
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+    // alert('Task added')
+
+    e.preventDefault()
+})
+
+const tasks = JSON.parse(localStorage.getItem('tasks'))
+
+tasks.forEach(element => {
+    console.log(element)
+});
