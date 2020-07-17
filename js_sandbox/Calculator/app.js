@@ -1,8 +1,19 @@
-document.querySelector('#loan-form').addEventListener('submit', calculateResults)
+document.querySelector('#loan-form').addEventListener('submit', handleResults)
 
-function calculateResults(e){
+function handleResults(e){
+    //Hide results
+    document.querySelector('#results').style.display = 'none'
+
+    //Show loader
+    document.querySelector('#loading').style.display = 'block'
+
+    setTimeout(calculateResults, 2000)
+
+    e.preventDefault()
+}
+
+function calculateResults(){
     console.log('Calculating')
-
     //UI variables
     const amount = document.querySelector('#amount')
     const interest = document.querySelector('#interest')
@@ -24,14 +35,21 @@ function calculateResults(e){
         monthlyPayment.value = monthly.toFixed(2)
         totalPayment.value = (monthly * calculatedPayments).toFixed(2)
         totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2)
+
+        //hide loader
+        document.querySelector('#loading').style.display = 'none'
+
+        //Show results
+        document.querySelector('#results').style.display = 'block'
     }else{
         showError('Please check your numbers')
     }
-
-    e.preventDefault()
 }
 
 function showError(error){
+     //hide loader
+     document.querySelector('#loading').style.display = 'none'
+
     //Create a div
     const errorDiv = document.createElement('div');
 
@@ -44,7 +62,15 @@ function showError(error){
 
     //Create text node and append to div
     errorDiv.appendChild(document.createTextNode(error))
+
+    //Insert error above heading
+    card.insertBefore(errorDiv, heading)
+
+    // Timer for error 
+    setTimeout(clearError, 3000)
     
 }
 
-    
+function clearError(){
+    document.querySelector('.alert').remove()
+}

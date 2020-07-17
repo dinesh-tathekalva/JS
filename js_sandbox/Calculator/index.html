@@ -10,6 +10,12 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
     integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <style>
+      #loading, #results{
+        display: none;
+      }
+    </style>
 </head>
 
 <body class="bg-dark">
@@ -40,13 +46,13 @@
           </form>
 
           <!-- LOADER  -->
-          <!-- <div id="loading">
+          <div id="loading">
             <img src="./loading.gif">
-          </div> -->
-
+          </div>
+<!-- 
           <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
-          </div>
+          </div> -->
           <!-- RESULTS -->
           <div id="results">
             <h5 class="heading display-5 pb-3">Results</h5>
