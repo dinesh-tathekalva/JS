@@ -873,3 +873,29 @@ document.querySelector('form').addEventListener('submit', function(e){
     e.preventDefault()
 })
 
+
+
+//Prototype
+ 
+//Each object in JS has a prototype.
+//Prototype is an object itself. 
+//All objects inherits their methods and properties from their prototype
+//Object literals inherit from Object.prototype
+//Objects that are created from the constructor like Person inherit from Person.prototype
+//Ultimately with the prototype chain even the person.prototype leads to the object.prototype
+//
+//
+//
+//CLASS
+//Any method we add inside the class is added to the prototype
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
