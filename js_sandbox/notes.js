@@ -899,3 +899,31 @@ document.querySelector('form').addEventListener('submit', function(e){
 //
 //
 //
+// CONSTRUCTOR
+
+class Person {
+    constructor(fn, ln){
+        this.fn = fn
+        this.ln = ln
+
+    }
+    greeting() {
+        return `Hello ${this.fn} ${this.ln}`
+    }
+}
+
+class Customer extends Person {
+    constructor(fn, ln, age){
+        super(fn, ln)
+        this.age = age
+    }
+
+    // print(){
+    //     return `My name is ${Fn} ${Ln} and I'm ${age} years old`
+    //}
+
+}
+
+const christoph = new Customer('Christoph', 'Waltz', '30')
+
+console.log(christoph.greeting())
