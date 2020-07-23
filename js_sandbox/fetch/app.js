@@ -6,12 +6,12 @@ document.querySelector('.button3').addEventListener('click', getExternal)
 
 //Get data from text file
 function getText(){
-    fetch('posts.json')
+    fetch('text.txt')
     .then(function(res){
          return res.text()
     })
     .then (function(data){
-        console.log(JSON.stringify (data))
+        document.querySelector('#output').innerHTML = data
     }).catch(function(err){
         console.log(err)
     })
